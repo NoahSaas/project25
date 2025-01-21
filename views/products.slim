@@ -3,9 +3,13 @@ head
 body
     h1 Our Products
     ul
-    - if @products.any?
-        - @products.each do |product|
-            li = product
-    - else
-        p No products available at the moment.
-    a href="/" Back to Home
+        - if @products.any?
+            - @products.each do |product|
+                li
+                    .product-card
+                        img src=product["image_url"] alt=product["name"]
+                        h2 = product["name"]
+                        p = product["price"]
+                        a href="/products/#{product["id"]}" Read more
+        - else
+            p No products available at the moment.

@@ -1,0 +1,38 @@
+# Logfile created on 2025-01-21 20:05:21 +0100 by logger.rb/v1.6.5
+I, [2025-01-21T20:05:23.128336 #20268]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:06:09.114305 #20268]  INFO -- : Failed login attempt for username: 1
+I, [2025-01-21T20:06:16.133806 #20268]  INFO -- : Successful login for username: 2
+I, [2025-01-21T20:06:47.394698 #20268]  INFO -- : Failed login attempt for username: 23dasd
+I, [2025-01-21T20:08:24.910172 #20268]  INFO -- : Failed login attempt for username: 23dasd
+I, [2025-01-21T20:08:36.265413 #2140]  INFO -- : Failed login attempt for username: 1
+I, [2025-01-21T20:08:36.760120 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:08:37.768863 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:08:38.166731 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:08:38.367054 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:08:38.535156 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:08:59.683014 #2140]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:09:13.450316 #2140]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:09:18.314745 #2140]  INFO -- : Failed login attempt for username: d
+I, [2025-01-21T20:09:22.338238 #2140]  INFO -- : Failed login attempt for username: 1
+I, [2025-01-21T20:10:21.145709 #2140]  INFO -- : Failed login attempt for username: d
+I, [2025-01-21T20:10:24.266301 #2140]  INFO -- : Failed login attempt for username: d
+I, [2025-01-21T20:12:29.344353 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:12:29.528683 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:12:29.757292 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:12:29.924281 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:12:30.091493 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:11.780513 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:13.070405 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:13.682867 #2140]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:36.157454 #11728]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:37.709990 #11728]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:38.506485 #11728]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:39.133219 #11728]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:42.028971 #11728]  INFO -- : Failed login attempt for username: 
+I, [2025-01-21T20:13:50.526273 #11728]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:19:18.870426 #11728]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:19:26.732698 #11728]  INFO -- : Successful login for username: 2
+I, [2025-01-21T20:31:12.762125 #11728]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:31:16.880579 #11728]  INFO -- : Successful login for username: 1
+I, [2025-01-21T20:45:29.619893 #11100]  INFO -- : Successful login for username: 2
+I, [2025-01-21T20:47:02.553732 #15544]  INFO -- : Successful login for username: 1

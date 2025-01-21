@@ -1,0 +1,22 @@
+head
+    title My App
+body
+    h1 Welcome to Grocery Shopping
+    nav
+        ul
+            li: a href="/" Home
+            li: a href="/products" Products
+            - if !session[:id]
+                li: a href="/login" Login
+                li: a href="/register" Register
+            - if session[:id]
+                li: a href="/login" Logout
+            - if @current_user && @current_user['rank'] == 'admin'
+                li: a href="/admin" Admin
+            - puts @current_user
+
+    == yield
+
+
+    footer
+        p &copy; 2023 Grocery Shopping Website. All rights reserved.
