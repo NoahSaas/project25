@@ -5,12 +5,7 @@ body
     ul
     - if @products.any?
         - @products.each do |product|
-        li
-            h2 = product['name']
-            p Description: #{product['description']}
-            p Price: $#{product['price']}
-            p In Stock: #{product['stock']}
-            img src="/images/#{product['image_url']}" alt=product['name'] width="200"
+            li = product
     - else
         p No products available at the moment.
     a href="/" Back to Home
