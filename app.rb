@@ -40,6 +40,14 @@ get('/products') do
   slim(:products)
 end
 
+get('/products/:id') do
+  id = params[:id]
+  db = SQLite3::Database.new('db/database.db')
+  db.results_as_hash = true
+  @product = db.execute('SELECT * FROM products WHERE id = ?', id).first
+  slim(:products)
+end 
+
 get('/admin') do
   slim(:admin)
 end
@@ -50,6 +58,10 @@ get('/admin/dashboard') do
   @products = db.execute('SELECT * FROM products')
   slim(:dashboard)
 end 
+
+get('/admin/dashboard/edit_product/:id') do
+  slim(:edit_product)
+end
 
 post('/login') do
   username = params[:username]
@@ -97,4 +109,28 @@ post('/register') do
     User.create(username, password)
     redirect('/login')
   end
+end
+
+post('/admin/add_product') do
+  name = params[:name]
+  price = params[:price]
+  description = params[:description]
+  image_url = "/img/placeholder.png"
+  Product.create(name, price, description, image_url)
+  redirect('/admin/dashboard')
+end
+
+post('/admin/delete_product') do
+  id = params[:id]
+  Product.delete(id)
+  redirect('/admin/dashboard')
+end
+
+post('/admin/update_product') do
+  id = params[:id]
+  name = params[:name]
+  price = params[:price]
+  description = params[:description]
+  Product.update(id, name, price, description)
+  redirect('/admin/dashboard')
 end

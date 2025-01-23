@@ -1,15 +1,24 @@
-head
+doctype html
+html
+  head
     title Products
-body
-    h1 Our Products
-    ul
+  body
+    - if @product
+      .product-card
+        h3 = @product["name"]
+        p = @product["price"].to_s + " kr"
+        img src=@product["image_url"] alt=@product["name"] style="width: 100px; height: auto;"
+        p = @product["description"]
+    - else
+      h1 Our Products
+      ul
         - if @products.any?
-            - @products.each do |product|
-                li
-                    .product-card
-                        img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
-                        h2 = product["name"]
-                        p = product["price"]
-                        a href="/products/#{product["id"]}" Read more
+          - @products.each do |product|
+            li
+              .product-card
+                h3 = product["name"]
+                p = product["description"]
+                img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
+                a href="/products/#{product["id"]}" Read more
         - else
-            p No products available at the moment.
+          p No products available at the moment.
