@@ -7,7 +7,7 @@ body
             - @products.each do |product|
                 li
                     .product-card
-                        img src=product["image_url"] alt=product["name"]
+                        img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
                         h2 = product["name"]
                         p = product["price"]
                         a href="/products/#{product["id"]}" Read more

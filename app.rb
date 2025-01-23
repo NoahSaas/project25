@@ -1,9 +1,11 @@
+require_relative 'models/env'
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'slim'
 require 'bcrypt'
 require 'logger'
-require_relative 'models/user'
+
+
 
 enable :sessions
 logger = Logger.new('log/login_attempts.log')
