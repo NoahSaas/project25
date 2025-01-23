@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        title Dashboard
+        meta charset="utf-8"
+        link rel="stylesheet" href="/path/to/your/styles.css"
+    body
+        header
+            h1 Admin Dashboard
+        main
+            section
+                h2 Add Product
+                form action="/products" method="post"
+                    label for="name" Name:
+                    input type="text" id="name" name="name" required
+                    label for="price" Price:
+                    input type="number" id="price" name="price" required
+                    label for="description" Description:
+                    textarea id="description" name="description" required
+                    button type="submit" Add Product
+
+            section
+                h2 Products List
+                ul
+                    - if @products.any?
+                        - @products.each do |product|
+                            li
+                                .product-card
+                                    h3 = product["name"]
+                                    p = product["price"]
+                                    p = product["description"]
+                                    img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
+                    - else
+                        p No products available at the moment.

@@ -44,6 +44,13 @@ get('/admin') do
   slim(:admin)
 end
 
+get('/admin/dashboard') do
+  db = SQLite3::Database.new('db/database.db')
+  db.results_as_hash = true
+  @products = db.execute('SELECT * FROM products')
+  slim(:dashboard)
+end 
+
 post('/login') do
   username = params[:username]
   password = params[:password]
