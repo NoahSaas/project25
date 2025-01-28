@@ -5,14 +5,22 @@ require 'slim'
 require 'bcrypt'
 require 'logger'
 
-
-
 enable :sessions
 logger = Logger.new('log/login_attempts.log')
 
 before do
   if session[:id]
     @current_user = User.find_by_id(session[:id])
+  end
+end
+
+helpers do
+  def admin?
+    @current_user && @current_user["rank"] == "admin"
+  end
+
+  def protected!
+    halt 403, "Not authorized\n" unless admin?
   end
 end
 
@@ -34,32 +42,30 @@ get('/register') do
 end
 
 get('/products') do
-  db = SQLite3::Database.new('db/database.db')
-  db.results_as_hash = true
-  @products = db.execute('SELECT * FROM products')
+  @products = Product.all
   slim(:products)
 end
 
 get('/products/:id') do
   id = params[:id]
-  db = SQLite3::Database.new('db/database.db')
-  db.results_as_hash = true
-  @product = db.execute('SELECT * FROM products WHERE id = ?', id).first
+  @product = find_by_id(id)
   slim(:products)
 end 
 
 get('/admin') do
+  protected!
   slim(:admin)
 end
 
 get('/admin/dashboard') do
-  db = SQLite3::Database.new('db/database.db')
-  db.results_as_hash = true
-  @products = db.execute('SELECT * FROM products')
+  protected!
+  @products = Product.all
   slim(:dashboard)
 end 
 
 get('/admin/dashboard/edit_product/:id') do
+  protected!
+  @product = Product.find_by_id(params[:id].to_i)
   slim(:edit_product)
 end
 
@@ -112,6 +118,7 @@ post('/register') do
 end
 
 post('/admin/add_product') do
+  protected!
   name = params[:name]
   price = params[:price]
   description = params[:description]
@@ -121,16 +128,20 @@ post('/admin/add_product') do
 end
 
 post('/admin/delete_product') do
+  protected!
   id = params[:id]
   Product.delete(id)
   redirect('/admin/dashboard')
 end
 
 post('/admin/update_product') do
+  protected!
   id = params[:id]
   name = params[:name]
   price = params[:price]
   description = params[:description]
-  Product.update(id, name, price, description)
+  image_url = params[:image_url]
+  stock = params[:stock]
+  Product.update(id, name, price, description, image_url, stock)
   redirect('/admin/dashboard')
 end

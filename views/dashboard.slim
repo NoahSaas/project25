@@ -9,7 +9,7 @@ html
             h1 Admin Dashboard
         main
             section
-                h2 Add Product
+                h2 Add New Product
                 form action="/admin/add_product" method="post"
                     label for="name" Name:
                     input type="text" id="name" name="name" 
@@ -31,9 +31,7 @@ html
                                     p = product["description"]
                                     img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
                                     p = product["stock"].to_s + " in stock"
-                                    form action="/admin/dashboard/update_product" method="get"
-                                        input type="hidden" name="id" value=product["id"]
-                                        button type="submit" Edit
+                                    button type="button" onclick="window.location.href='/admin/dashboard/edit_product/#{product['id']}'" Edit
                                     form action="/admin/delete_product" method="post"
                                         input type="hidden" name="id" value=product["id"]
                                         button type="submit" Delete

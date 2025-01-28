@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Edit Product
+  body
+    h2 Edit Product
+    - if @product
+      .product-card
+        h3 = @product["name"]
+        p = @product["price"].to_s + " kr"
+        p = @product["description"]
+        img src=@product["image_url"] alt=@product["name"] style="width: 100px; height: auto;"
+        p = @product["stock"].to_s + " in stock"
+        form action="/admin/update_product" method="post"
+          input type="hidden" name="id" value=@product["id"]
+          label for="name" Name:
+          input type="text" id="name" name="name" value=@product["name"]
+          label for="price" Price:
+          input type="number" id="price" name="price" value=@product["price"]
+          label for="description" Description:
+          textarea id="description" name="description" = @product["description"]
+          
+          label for="image_url" Image URL:
+          input type="text" id="image_url" name="image_url" value=@product["image_url"]
+          
+          label for="stock" Stock:
+          input type="number" id="stock" name="stock" value=@product["stock"]
+          button type="submit" Update
+        form action="/admin/delete_product" method="post"
+          input type="hidden" name="id" value=@product["id"]
+          button type="submit" Delete
+    - else
+      p No product found.

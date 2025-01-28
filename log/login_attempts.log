@@ -65,3 +65,21 @@ I, [2025-01-23T21:06:11.946774 #12172]  INFO -- : Successful login for username:
 I, [2025-01-23T21:09:38.701683 #12172]  INFO -- : Successful login for username: 1
 I, [2025-01-23T21:34:26.348254 #15908]  INFO -- : Successful login for username: 1
 I, [2025-01-23T21:34:40.625338 #15908]  INFO -- : Successful login for username: 1
+I, [2025-01-24T20:53:19.826349 #1804]  INFO -- : Failed login attempt for username: 2
+I, [2025-01-24T20:54:04.687738 #1804]  INFO -- : Failed login attempt for username: 1
+I, [2025-01-24T20:54:06.886785 #1804]  INFO -- : Failed login attempt for username: 1
+I, [2025-01-24T20:54:10.413460 #1804]  INFO -- : Successful login for username: 2
+I, [2025-01-24T20:54:15.908989 #1804]  INFO -- : Successful login for username: 1
+I, [2025-01-28T15:33:41.192988 #23220]  INFO -- : Successful login for username: 1
+I, [2025-01-28T15:52:45.751580 #11716]  INFO -- : Successful login for username: 1
+I, [2025-01-28T15:53:53.252325 #11716]  INFO -- : Successful login for username: 1
+I, [2025-01-28T15:55:23.008932 #11716]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:07:06.525872 #1356]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:07:45.937079 #7628]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:07:55.353463 #7628]  INFO -- : Successful login for username: 3
+I, [2025-01-28T18:08:07.518909 #7628]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:24:54.407793 #14880]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:26:50.614029 #14880]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:27:31.451375 #14880]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:28:17.264282 #14880]  INFO -- : Successful login for username: 1
+I, [2025-01-28T18:57:02.240666 #14004]  INFO -- : Successful login for username: 1

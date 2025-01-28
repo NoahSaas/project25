@@ -9,6 +9,7 @@ html
         p = @product["price"].to_s + " kr"
         img src=@product["image_url"] alt=@product["name"] style="width: 100px; height: auto;"
         p = @product["description"]
+        p = @product["stock"].to_s + " in stock"
     - else
       h1 Our Products
       ul
@@ -19,6 +20,6 @@ html
                 h3 = product["name"]
                 p = product["description"]
                 img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
-                a href="/products/#{product["id"]}" Read more
+                a href="/products/#{product["id"]}" Read more+
         - else
           p No products available at the moment.

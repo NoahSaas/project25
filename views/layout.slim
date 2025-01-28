@@ -1,7 +1,9 @@
 head
     title My App
     script src="/js/main.js"
+    link rel="stylesheet" href="/css/style.css"
 body
+
     button onclick="goBack()" Go Back
     h1 Welcome to Grocery Shopping
     nav
@@ -15,7 +17,6 @@ body
                 li: a href="/login" Logout
             - if @current_user && @current_user['rank'] == 'admin'
                 li: a href="/admin" Admin
-            - puts @current_user
 
     == yield
 
