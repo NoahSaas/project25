@@ -4,10 +4,14 @@ html
     title Products
   body
     - if @product
+      button onclick="goBack()" Go Back
       .product-card
         h3 = @product["name"]
         p = @product["price"].to_s + " kr"
         img src=@product["image_url"] alt=@product["name"] style="width: 100px; height: auto;"
+        form action="/cart/add" method="post"
+          input type="hidden" name="product_id" value=@product["id"]
+          button type="submit" Add to Cart
         p = @product["description"]
         p = @product["stock"].to_s + " in stock"
     - else
@@ -18,8 +22,11 @@ html
             li
               .product-card
                 h3 = product["name"]
-                p = product["description"]
+                p = product["price"].to_s + " kr"
                 img src=product["image_url"] alt=product["name"] style="width: 100px; height: auto;"
+                form action="/cart/add" method="post"
+                  input type="hidden" name="product_id" value=product["id"]
+                  button type="submit" Add to Cart
                 a href="/products/#{product["id"]}" Read more+
         - else
           p No products available at the moment.

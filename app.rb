@@ -48,25 +48,41 @@ end
 
 get('/products/:id') do
   id = params[:id]
-  @product = find_by_id(id)
+  @product = Product.find_by_id(id)
   slim(:products)
 end 
 
+get('/orders') do
+  slim(:orders)
+end
+
 get('/admin') do
   protected!
-  slim(:admin)
+  slim(:"admin/admin")
 end
 
 get('/admin/dashboard') do
   protected!
   @products = Product.all
-  slim(:dashboard)
+  slim(:"admin/dashboard")
 end 
+
+get('/admin/users') do
+  protected!
+  @users = User.all
+  slim(:"admin/users")
+end
+
+get('/admin/users/edit_user/:id') do
+  protected!
+  @user = User.find_by_id(params[:id].to_i)
+  slim(:"admin/edit_user")
+end
 
 get('/admin/dashboard/edit_product/:id') do
   protected!
   @product = Product.find_by_id(params[:id].to_i)
-  slim(:edit_product)
+  slim(:"admin/edit_product")
 end
 
 post('/login') do
@@ -123,7 +139,8 @@ post('/admin/add_product') do
   price = params[:price]
   description = params[:description]
   image_url = "/img/placeholder.png"
-  Product.create(name, price, description, image_url)
+  stock = params[:stock]
+  Product.create(name, price, description, image_url, stock)
   redirect('/admin/dashboard')
 end
 
@@ -144,4 +161,32 @@ post('/admin/update_product') do
   stock = params[:stock]
   Product.update(id, name, price, description, image_url, stock)
   redirect('/admin/dashboard')
+end
+
+
+#FIX UPDATE USER
+post('/admin/update_user') do
+  protected!
+  id = params[:id]
+  username = params[:username]
+  rank = params[:rank]
+  password = params[:password]
+
+  if password.empty?
+    pwdigest = User.find_by_id(id)["pwdigest"]
+  else
+    pwdigest = BCrypt::Password.create(password)
+  end
+
+  User.update(id, username, pwdigest, rank)
+  redirect('/admin/users')
+end
+
+post('/cart/add') do
+  id = params[:product_id]
+  puts id
+  product = Product.find_by_id(id)
+  session[:cart] ||= []
+  session[:cart] << product
+  redirect('/products')
 end

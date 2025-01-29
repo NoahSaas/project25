@@ -3,8 +3,6 @@ head
     script src="/js/main.js"
     link rel="stylesheet" href="/css/style.css"
 body
-
-    button onclick="goBack()" Go Back
     h1 Welcome to Grocery Shopping
     nav
         ul
@@ -15,6 +13,7 @@ body
                 li: a href="/register" Register
             - if session[:id]
                 li: a href="/login" Logout
+                li: a href="/orders" My Orders
             - if @current_user && @current_user['rank'] == 'admin'
                 li: a href="/admin" Admin
 

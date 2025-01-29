@@ -1,24 +1,41 @@
 body {
-    background-color: grey;
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 20px;
-  }
+  background-color: grey;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.user-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.user-card p {
+  margin: 5px 0;
+}

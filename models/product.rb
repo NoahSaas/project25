@@ -1,9 +1,9 @@
 require 'sqlite3'
 
 class Product
-  def self.create(name, price, description, image_url)
+  def self.create(name, price, description, image_url, stock)
     db = SQLite3::Database.new('db/database.db')
-    db.execute("INSERT INTO products (name, price, description, image_url, stock) VALUES (?, ?, ?, ?, ?)", [name, price, description, image_url, 0])
+    db.execute("INSERT INTO products (name, price, description, image_url, stock) VALUES (?, ?, ?, ?, ?)", [name, price, description, image_url, stock])
   end
 
   def self.delete(id)
@@ -14,13 +14,13 @@ class Product
   def self.all
     db = SQLite3::Database.new('db/database.db')
     db.results_as_hash = true
-    return db.execute('SELECT * FROM products')
+    db.execute('SELECT * FROM products')
   end
 
   def self.find_by_id(id)
     db = SQLite3::Database.new('db/database.db')
     db.results_as_hash = true
-    return db.execute('SELECT * FROM products WHERE id = ?', id).first
+    db.execute('SELECT * FROM products WHERE id = ?', id).first
   end
 
   def self.update(id, name, price, description, image_url, stock)

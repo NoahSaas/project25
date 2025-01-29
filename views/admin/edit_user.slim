@@ -1,0 +1,13 @@
+h2 Username: #{@user['username']}
+h2 Rank: #{@user['rank']}
+h2 Id: #{@user['id']}
+
+form action="/admin/update_user" method="post"
+          input type="hidden" name="id" value=@user["id"]
+          label for="username" Username:
+          input type="text" id="username" name="username" value=@user["username"]
+          label for="rank" Rank:
+          input type="text" id="rank" name="rank" value=@user["rank"]
+          label for="password" Password:
+          input type="password" id="password" name="password"
+          button type="submit" Update User
