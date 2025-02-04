@@ -31,4 +31,9 @@ class User
     pwdigest = BCrypt::Password.create(password)
     db.execute("UPDATE users SET username = ?, pwdigest = ?, rank = ? WHERE id = ?", [username, pwdigest, rank, id])
   end
+
+  def self.delete(id)
+    db = SQLite3::Database.new('db/database.db')
+    db.execute("DELETE FROM users WHERE id = ?", [id])
+  end
 end

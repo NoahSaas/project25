@@ -52,8 +52,8 @@ get('/products/:id') do
   slim(:products)
 end 
 
-get('/orders') do
-  slim(:orders)
+get('/cart') do
+  slim(:cart)
 end
 
 get('/admin') do
@@ -163,8 +163,13 @@ post('/admin/update_product') do
   redirect('/admin/dashboard')
 end
 
+post('/admin/delete_user') do
+  protected!
+  id = params[:id]
+  User.delete(id)
+  redirect('/admin/users')
+end
 
-#FIX UPDATE USER
 post('/admin/update_user') do
   protected!
   id = params[:id]
@@ -188,5 +193,6 @@ post('/cart/add') do
   product = Product.find_by_id(id)
   session[:cart] ||= []
   session[:cart] << product
+  puts session[:cart]
   redirect('/products')
 end

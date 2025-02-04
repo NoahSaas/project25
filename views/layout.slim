@@ -13,7 +13,7 @@ body
                 li: a href="/register" Register
             - if session[:id]
                 li: a href="/login" Logout
-                li: a href="/orders" My Orders
+                li: a href="/cart" Cart
             - if @current_user && @current_user['rank'] == 'admin'
                 li: a href="/admin" Admin
 
