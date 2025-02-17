@@ -189,10 +189,8 @@ end
 
 post('/cart/add') do
   id = params[:product_id]
-  puts id
   product = Product.find_by_id(id)
   session[:cart] ||= []
   session[:cart] << product
-  puts session[:cart]
   redirect('/products')
 end

@@ -5,11 +5,14 @@ head
     link rel="stylesheet" href="/stylesheets/main.css"
 body
     main
-        section#hero
+        section
             h2 Fresh Groceries Delivered to Your Doorstep
             p Shop from a wide range of fresh and organic products.
-            a.button href="/products" Start Shopping
-        section#features
+            - if @current_user
+                a.button href="/products" Start Shopping
+            - else
+                a.button href="/login" Start Shopping
+        section
             h2 Why Shop With Us?
             ul
                 li
