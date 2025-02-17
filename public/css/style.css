@@ -52,8 +52,10 @@ footer {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+  width: auto; /* Ensure the button does not take full width */
 }
 
 .user-card form .button {
   background-color: #f44336; /* Red */
+  width: auto; /* Ensure the button does not take full width */
 }
