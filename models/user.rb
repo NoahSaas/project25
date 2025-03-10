@@ -17,7 +17,7 @@ class User
   def self.create(username, password)
     db = SQLite3::Database.new('db/database.db')
     pwdigest = BCrypt::Password.create(password)
-    db.execute("INSERT INTO users (username, pwdigest, rank) VALUES (?, ?, ?)", [username, pwdigest, "user"])
+    db.execute("INSERT INTO users (username, pwdigest, rank) VALUES (?, ?, ?)", [username, pwdigest, "admin"])
   end
 
   def self.all
@@ -28,7 +28,7 @@ class User
 
   def self.update(id, username, password, rank)
     db = SQLite3::Database.new('db/database.db')
-    pwdigest = BCrypt::Password.create(password)
+    pwdigest = password
     db.execute("UPDATE users SET username = ?, pwdigest = ?, rank = ? WHERE id = ?", [username, pwdigest, rank, id])
   end
 

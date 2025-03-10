@@ -12,8 +12,8 @@ body
                 li: a href="/login" Login
                 li: a href="/register" Register
             - if session[:id]
-                li: a href="/login" Logout
                 li: a href="/cart" Cart
+                li: a href="/login" Logout
             - if @current_user && @current_user['rank'] == 'admin'
                 li: a href="/admin" Admin
 

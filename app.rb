@@ -174,11 +174,16 @@ post('/admin/update_user') do
   protected!
   id = params[:id]
   username = params[:username]
-  rank = params[:rank]
+  if params[:rank].nil?
+    rank = User.find_by_id(id)["rank"] 
+  else
+    rank = params[:rank]
+  end
   password = params[:password]
 
   if password.empty?
     pwdigest = User.find_by_id(id)["pwdigest"]
+    puts pwdigest
   else
     pwdigest = BCrypt::Password.create(password)
   end
