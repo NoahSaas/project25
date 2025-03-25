@@ -1,5 +1,6 @@
 h1 Your cart
 
+- @cart = session[:cart] || []
 - if @cart.any?
     - @cart.each do |product|
         .cart-item

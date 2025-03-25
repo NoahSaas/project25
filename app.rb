@@ -199,3 +199,10 @@ post('/cart/add') do
   session[:cart] << product
   redirect('/products')
 end
+
+post('/cart/remove') do
+  id = params[:product_id].to_i
+  session[:cart] ||= [] 
+  session[:cart].delete_if { |product| product["id"].to_i == id }
+  redirect('/cart')
+end

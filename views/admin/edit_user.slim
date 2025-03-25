@@ -3,7 +3,6 @@ h2 Rank: #{@user['rank']}
 h2 Id: #{@user['id']}
 
 form action="/admin/update_user" method="post"
-<<<<<<< Updated upstream
     input type="hidden" name="id" value=@user["id"]
     
     label for="username" Username:
@@ -19,16 +18,3 @@ form action="/admin/update_user" method="post"
     input type="password" id="password" name="password"
 
     button type="submit" Update User
-=======
-          input type="hidden" name="id" value=@user["id"]
-          label for="username" Username:
-          input type="text" id="username" name="username" value=@user["username"]
-          label for="rank" Rank:
-          select name="rank" id="rank" 
-            option value="user" = "User"
-            option value="admin" = "Admin"
-            option value="guest" = "Guest"
-          label for="password" Password (optional):
-          input type="password" id="password" name="password"
-          button type="submit" Update User
->>>>>>> Stashed changes
