@@ -26,9 +26,12 @@ class User
     db.execute("SELECT * FROM users")
   end
 
-  def self.update(id, username, password, rank)
+  def self.update(id, username, pwdigest, rank)
     db = SQLite3::Database.new('db/database.db')
+<<<<<<< Updated upstream
     pwdigest = password
+=======
+>>>>>>> Stashed changes
     db.execute("UPDATE users SET username = ?, pwdigest = ?, rank = ? WHERE id = ?", [username, pwdigest, rank, id])
   end
 

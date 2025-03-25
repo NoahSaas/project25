@@ -128,6 +128,7 @@ I, [2025-02-04T16:00:21.928882 #17904]  INFO -- : Successful login for username:
 I, [2025-02-04T16:21:53.635534 #14964]  INFO -- : Successful login for username: 1
 I, [2025-02-04T16:26:23.540198 #14660]  INFO -- : Successful login for username: 1
 I, [2025-02-17T10:39:24.243716 #16132]  INFO -- : Successful login for username: 1
+<<<<<<< Updated upstream
 I, [2025-03-10T20:55:06.079772 #6984]  INFO -- : Successful login for username: 1
 I, [2025-03-10T20:55:38.933381 #6984]  INFO -- : Failed login attempt for username: 11
 I, [2025-03-10T20:55:42.866331 #6984]  INFO -- : Failed login attempt for username: 111
@@ -148,3 +149,28 @@ I, [2025-03-10T22:35:19.244385 #30840]  INFO -- : Successful login for username:
 I, [2025-03-10T22:41:41.041247 #30840]  INFO -- : Successful login for username: 1
 I, [2025-03-10T22:46:59.165745 #31164]  INFO -- : Successful login for username: 1
 I, [2025-03-10T22:50:33.344022 #23456]  INFO -- : Successful login for username: 1
+=======
+I, [2025-02-25T14:41:04.359997 #4220]  INFO -- : Successful login for username: 1
+I, [2025-02-25T14:51:10.881856 #4220]  INFO -- : Failed login attempt for username: Britta
+I, [2025-02-25T15:00:15.915397 #4220]  INFO -- : Failed login attempt for username: 1
+I, [2025-02-25T15:00:20.544202 #4220]  INFO -- : Failed login attempt for username: 1
+I, [2025-02-25T15:06:55.417225 #16820]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:07:24.534826 #16820]  INFO -- : Failed login attempt for username: 1
+I, [2025-02-25T15:11:54.568913 #6656]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:12:07.525355 #11600]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:13:59.096234 #4212]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:41:42.340851 #9880]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:48:55.376696 #4784]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:49:26.206364 #4784]  INFO -- : Failed login attempt for username: 2
+I, [2025-02-25T15:49:31.204456 #4784]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:50:40.573490 #4784]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:59:10.767626 #4784]  INFO -- : Failed login attempt for username: 3
+I, [2025-02-25T15:59:18.271151 #4784]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:59:27.794461 #15212]  INFO -- : Failed login attempt for username: 3
+I, [2025-02-25T15:59:30.542098 #15212]  INFO -- : Successful login for username: 1
+I, [2025-02-25T15:59:43.859577 #15212]  INFO -- : Successful login for username: 3
+I, [2025-02-25T15:59:52.064532 #15212]  INFO -- : Successful login for username: 1
+I, [2025-02-25T16:00:07.262853 #15212]  INFO -- : Failed login attempt for username: 3
+I, [2025-02-25T16:00:11.313373 #15212]  INFO -- : Successful login for username: 33
+I, [2025-02-25T16:11:39.001239 #15212]  INFO -- : Successful login for username: 1
+>>>>>>> Stashed changes
