@@ -183,7 +183,6 @@ post('/admin/update_user') do
 
   if password.empty?
     pwdigest = User.find_by_id(id)["pwdigest"]
-    puts pwdigest
   else
     pwdigest = BCrypt::Password.create(password)
   end
